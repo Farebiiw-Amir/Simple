@@ -3,9 +3,6 @@ var cron = require("node-cron");
 const { exec } = require("child_process");
 const timerestart = 120
 var cron = require('node-cron');
-cron.schedule('* */* * * * *', () => {
-  process.exit(1)
-});
 exec("rm -rf script/commands/data && mkdir -p script/commands/data && rm -rf script/commands/tad/* ", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
